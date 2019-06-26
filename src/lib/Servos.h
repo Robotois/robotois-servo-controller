@@ -9,7 +9,7 @@
 #define	SERVOS_H
 
 #include <cstdint>
-#include "./libraries/robotois-PCA9685/PCA9685.h"
+#include "./robotois-PCA9685/PCA9685.h"
 
 #define SERVOS_MIN_ON_TIME 143.34f // => 700us
 #define SERVOS_MAX_ON_TIME 471.04f // => 2300us

@@ -1,19 +1,17 @@
-// ServosWrapper.h
 #ifndef SERVOSWRAPPER_H
 #define SERVOSWRAPPER_H
 
 #include <node.h>
 #include <node_object_wrap.h>
-#include "../lib/Servos.h"
-
-namespace demo {
+#include "../Servos.h"
 
 class ServosWrapper : public node::ObjectWrap {
- public:
-  static void Init(v8::Local<v8::Object> exports);
+public:
+  static void Init();
+  static void NewInstance(const v8::FunctionCallbackInfo<v8::Value>& args);
 
- private:
-  explicit ServosWrapper(uint8_t header);
+private:
+  explicit ServosWrapper(uint8_t _add = 0x00);
   ~ServosWrapper();
 
   static void New(const v8::FunctionCallbackInfo<v8::Value>& args);
@@ -25,7 +23,5 @@ class ServosWrapper : public node::ObjectWrap {
 
   Servos *servos;
 };
-
-}  // namespace demo
 
 #endif

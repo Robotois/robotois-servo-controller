@@ -1,6 +1,6 @@
 const ServoController = require('../');
 
-const servoController = new ServoController(0);
+const servoController = new ServoController();
 const servo = servoController.createServo(2);
 
 let angle = 0;

@@ -1,4 +1,4 @@
-const SModule = require('bindings')('ServosModule');
+const Addon = require('bindings')('ServosModule');
 const Servo = require('./single-servo');
 
 /**
@@ -9,7 +9,7 @@ const Servo = require('./single-servo');
 function ServoController(address = 0) {
   const self = this;
 
-  this.servos = new SModule(address);
+  this.servos = new Addon.Servos(address);
 
   process.on('SIGINT', () => {
     self.servos.release();
